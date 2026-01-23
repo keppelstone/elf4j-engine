@@ -110,7 +110,10 @@ public record LogEvent(
 
   /** A renderable value representing a call stack element. */
   public record CallerFrameValue(
-      String className, String methodName, int lineNumber, @Nullable String fileName) {
+      String className,
+      String methodName,
+      int lineNumber,
+      @Nullable String fileName) {
     public static CallerFrameValue from(StackWalker.StackFrame stackFrame) {
       return new CallerFrameValue(
           stackFrame.getClassName(),
